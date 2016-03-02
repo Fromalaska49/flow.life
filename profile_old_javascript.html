@@ -1,0 +1,462 @@
+
+		<script type="text/javascript">
+		function heightcalc() {
+			var winh = window.innerHeight;
+			var newsh = winh-100;
+			var feedh = document.getElementById("feed");
+			feed.style.height=newsh;
+		}
+		</script>
+		<script type="text/javascript">
+		function down() {
+			var h = -200;
+			var x;
+			var x = window.setInterval(myf, 2);
+			document.getElementById('userwrapper').style.display='none';
+			function myf() {
+				if (h<100) {
+					var mydiv = document.getElementById("textarea");
+					h = h+5;
+					var height = h+"px";
+					mydiv.style.top=height;
+				}
+				else {
+					window.setTimeout(stopdown, 0);
+				}
+			}
+			function stopdown() {
+				window.clearInterval(x)
+			}
+		}
+		</script>
+		<script type="text/javascript">
+		function writedown() {
+			var h = -200;
+			var x;
+			var x = window.setInterval(myf, 2);
+			document.getElementById('userwrapper').style.display='none';
+			document.getElementById('sendbutton').style.display='none';
+			document.getElementById('postbutton').style.display='none';
+			document.getElementById('writebutton').style.display='';
+			function myf() {
+				if (h<100) {
+						var mydiv = document.getElementById("textarea");
+					h = h+5;
+					var height = h+"px";
+					mydiv.style.top=height;
+				}
+				else {
+					window.setTimeout(stopdown, 0);
+				}
+			}
+			function stopdown() {
+				window.clearInterval(x)
+			}
+		}
+		function writebutton() {
+			if (window.XMLHttpRequest) {
+				xmlhttp=new XMLHttpRequest();
+			}
+			else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function() {
+				//
+			}
+			var tx = document.getElementById('posttext').value;
+			function htmlspecialchars(str) {
+				 if (typeof(str) == "string") {
+				 	str = str.replace(/&/g, "&amp"); // must do &amp; first
+				 	str = str.replace(/"/g, "&quot");
+				 	str = str.replace(/'/g, "&#039");
+				 	str = str.replace(/</g, "&lt");
+				 	str = str.replace(/>/g, "&gt");
+				 	str = str.replace(/ /g, "%20");
+				 }
+				 return str;
+			}
+			var txt = htmlspecialchars(tx);
+			t = "?t="+txt;
+			address = "post.php?t="+txt;
+			xmlhttp.open("GET","write.php"+t,true);
+			xmlhttp.send();
+			window.setTimeout(hide, 0);
+		}
+		</script>
+
+		<script type="text/javascript">
+		function maildown() {
+			var h = -200;
+			var x;
+			var x = window.setInterval(myf, 2);
+			document.getElementById('userwrapper').style.display='none';
+			document.getElementById('sendbutton').style.display='';
+			document.getElementById('postbutton').style.display='none';
+			document.getElementById('writebutton').style.display='none';
+			function myf() {
+				if (h<100) {
+						var mydiv = document.getElementById("textarea");
+					h = h+5;
+					var height = h+"px";
+					mydiv.style.top=height;
+				}
+				else {
+					window.setTimeout(stopdown, 0);
+				}
+			}
+			function stopdown() {
+				window.clearInterval(x)
+			}
+		}
+		function mailbutton() {
+			if (window.XMLHttpRequest) {
+				xmlhttp=new XMLHttpRequest();
+			}
+			else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function() {
+				//
+			}
+			var tx = document.getElementById('posttext').value;
+			function htmlspecialchars(str) {
+				 if (typeof(str) == "string") {
+				 	str = str.replace(/&/g, "&amp"); // must do &amp; first
+				 	str = str.replace(/"/g, "&quot");
+				 	str = str.replace(/'/g, "&#039");
+				 	str = str.replace(/</g, "&lt");
+				 	str = str.replace(/>/g, "&gt");
+				 	str = str.replace(/ /g, "%20");
+				 }
+				 return str;
+			}
+			var txt = htmlspecialchars(tx);
+			t = "?t="+txt+"&id=<?php echo ($profileduser); ?>";
+			address = "post.php?t="+txt;
+			xmlhttp.open("GET","mail.php"+t,true);
+			xmlhttp.send();
+			window.setTimeout(hide, 0);
+		}
+		</script>
+
+		<script tpe="text/javascript">
+		function hide() {
+			var h = 100;
+			var a = 0;
+			var x;
+			var x = window.setInterval(myf, 2);
+			function myf() {
+				if (h>-200) {
+					var mydiv = document.getElementById("textarea");
+					h = h-5;
+					var height = h+"px";
+					mydiv.style.top=height;
+				}
+				else if (h==-200) {
+					window.setTimeout(stopup, 1000);
+					document.getElementById('userwrapper').style.display='';
+				}
+				else {
+					window.setTimeout(stopup, 1000);
+				}
+			}
+			function stopup() {
+				window.clearInterval(x)
+			}
+			window.setTimeout(erase, 1000)
+			function erase() {
+				document.getElementById('posttext').value='';
+			}
+		}
+		</script>
+
+
+
+
+
+
+<script type="text/javascript">
+function h1a() {
+	var h = 0;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopdown, 1000);
+	function myf() {
+		if (h<200) {
+			var mydiv = document.getElementById("friendlist");
+			h = h+10;
+			var height = h+"px";
+			mydiv.style.height=height;
+			}
+			else {
+				
+			}
+		}
+		document.getElementById('friendhide').style.display='';
+		document.getElementById('friendshow').style.display='none';
+		function upp() {
+			var x = window.setInterval(myf, 20);
+		}
+		function stopdown() {
+				window.clearInterval(x)
+		}
+	}
+</script>
+<script type="text/javascript">
+function h2a() {
+	var h = 200;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopup, 1000);
+	function myf() {
+		if (h>0) {
+			var mydiv = document.getElementById("friendlist");
+			h = h-10;
+			var height = h+"px";
+			mydiv.style.height=height;
+		}
+		else {
+			
+		}
+	}
+	document.getElementById('friendshow').style.display='';
+	document.getElementById('friendhide').style.display='none';
+	function upp() {
+		var x = window.setInterval(myf, 20);
+	}
+	function stopup() {
+		window.clearInterval(x)
+	}
+}
+</script>
+
+<script type="text/javascript">
+function h1b() {
+	var h = 0;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopdown, 1000);
+	function myf() {
+		if (h<200) {
+			var mydiv = document.getElementById("classlist");
+			h = h+10;
+			var height = h+"px";
+			mydiv.style.height=height;
+			}
+			else {
+				
+			}
+		}
+		document.getElementById('classhide').style.display='';
+		document.getElementById('classshow').style.display='none';
+		function upp() {
+			var x = window.setInterval(myf, 20);
+		}
+		function stopdown() {
+				window.clearInterval(x)
+		}
+	}
+</script>
+<script type="text/javascript">
+function h2b() {
+	var h = 200;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopup, 1000);
+	function myf() {
+		if (h>0) {
+			var mydiv = document.getElementById("classlist");
+			h = h-10;
+			var height = h+"px";
+			mydiv.style.height=height;
+		}
+		else {
+			
+		}
+	}
+	document.getElementById('classshow').style.display='';
+	document.getElementById('classhide').style.display='none';
+	function upp() {
+		var x = window.setInterval(myf, 20);
+	}
+	function stopup() {
+		window.clearInterval(x)
+	}
+}
+</script>
+
+<script type="text/javascript">
+function h1c() {
+	var h = 0;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopdown, 1000);
+	function myf() {
+		if (h<200) {
+			var mydiv = document.getElementById("grouplist");
+			h = h+10;
+			var height = h+"px";
+			mydiv.style.height=height;
+			}
+			else {
+				
+			}
+		}
+		document.getElementById('grouphide').style.display='';
+		document.getElementById('groupshow').style.display='none';
+		function upp() {
+			var x = window.setInterval(myf, 20);
+		}
+		function stopdown() {
+				window.clearInterval(x)
+		}
+	}
+</script>
+<script type="text/javascript">
+function h2c() {
+	var h = 200;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopup, 1000);
+	function myf() {
+		if (h>0) {
+			var mydiv = document.getElementById("grouplist");
+			h = h-10;
+			var height = h+"px";
+			mydiv.style.height=height;
+		}
+		else {
+			
+		}
+	}
+	document.getElementById('groupshow').style.display='';
+	document.getElementById('grouphide').style.display='none';
+	function upp() {
+		var x = window.setInterval(myf, 20);
+	}
+	function stopup() {
+		window.clearInterval(x)
+	}
+}
+</script>
+<script type="text/javascript">
+function h1d() {
+	var h = 0;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopdown, 1000);
+	function myf() {
+		if (h<200) {
+			var mydiv = document.getElementById("photolist");
+			h = h+10;
+			var height = h+"px";
+			mydiv.style.height=height;
+			}
+			else {
+				
+			}
+		}
+		document.getElementById('photohide').style.display='';
+		document.getElementById('photoshow').style.display='none';
+		function upp() {
+			var x = window.setInterval(myf, 20);
+		}
+		function stopdown() {
+				window.clearInterval(x)
+		}
+	}
+</script>
+<script type="text/javascript">
+function h2d() {
+	var h = 200;
+	var x;
+	var x = window.setInterval(myf, 20);
+	window.setTimeout(stopup, 1000);
+	function myf() {
+		if (h>0) {
+			var mydiv = document.getElementById("photolist");
+			h = h-10;
+			var height = h+"px";
+			mydiv.style.height=height;
+		}
+		else {
+			
+		}
+	}
+	document.getElementById('photoshow').style.display='';
+	document.getElementById('photohide').style.display='none';
+	function upp() {
+		var x = window.setInterval(myf, 20);
+	}
+	function stopup() {
+		window.clearInterval(x)
+	}
+}
+</script>
+		<script type="text/javascript">
+		function like(id) {
+			if (window.XMLHttpRequest) {
+				xmlhttp=new XMLHttpRequest();
+			}
+			else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function() {
+				//
+			}
+			var param = "id="+id;
+			xmlhttp.open("POST","plike.php",true);
+
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.setRequestHeader("Content-length", param.length);
+			xmlhttp.setRequestHeader("Connection", "close");
+			xmlhttp.send(param);
+			document.getElementById(id).innerHTML='Liked';
+		}
+		</script>
+
+		<script type="text/javascript">
+		function deltaf() {
+			var uid = <?php echo($_SESSION["uid"]) ?>;
+			var fid = <?php echo($profileduser) ?>;
+			if (window.XMLHttpRequest) {
+				xmlhttp=new XMLHttpRequest();
+			}
+			else {
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+	
+			var val = document.getElementById('fbutton');
+			var valu = document.getElementById('tvar1').innerHTML;
+			var varvalu = document.getElementById('tvar1');
+			//var valu="Friend";
+			if (valu==0) {
+				val.innerHTML='Waiting';
+				varvalu.innerHTML='2';
+			}
+			else if (valu==1) {
+				val.innerHTML='Add Friend';
+				varvalu.innerHTML='0';
+			}
+			else if (valu==2) {
+				val.innerHTML='Waiting';
+				varvalu.innerHTML='2';
+			}
+			else if (valu==3) {
+				val.innerHTML='Unfriend';
+				varvalu.innerHTML='1 ';
+			}
+			else {
+				val.innerHTML='error'+valu;
+			}
+			xmlhttp.onreadystatechange=function() {
+				//
+			}
+			var param = "fid="+<?php echo($profileduser); ?>;
+			xmlhttp.open("POST", "friend1.php", true);
+			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlhttp.setRequestHeader("Content-length", param.length);
+			xmlhttp.setRequestHeader("Connection", "close");
+			xmlhttp.send(param);
+		}
+		</script>

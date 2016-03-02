@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>
+Radford Network Help
+</title>
+		<meta name="keywords" content="radford, network, radfordnetwork.com, social, HS, high, school, help, contact, admin" />
+		<meta name="description" content="Radford High School social network help page" />
+<link rel="stylesheet" type="text/css" href="network.css" />
+<script type="text/javascript">
+setTimeout(myf, 6000);
+setTimeout(move, 7000);
+function move() {
+var box = document.getElementById('alert');
+box.style.position='relative';
+box.style.top='-50px';
+}
+function myf() {
+setInterval(f, 20);
+}
+x=1;
+function f() {
+var box = document.getElementById('alert');
+box.style.opacity=x;
+x=x-0.02;
+}
+</script>
+</head>
+<body style="background-color:#333333;background-image:url('iosfolderbackground.jpg');background-repeat:repeat;">
+<!--This is the header-->
+<div class="head" id="head">
+<h1 style="float:left;color:white;position:relative;top:-13px;display:inline;">
+Radford Network
+</h1>
+<ul style="list-style-type:none;display:inline;position:relative;top:12px;left:-15px;float:right;">
+<li class="opt">
+<a href="login.html" style="">Back</a>
+</li>
+</ul>
+</div>
+
+<div id="alert" style="z-index:1100;position:relative;top:0px;background-color:#feed88;border-style:solid;border-color:orange;border-width:1px;text-size:10px;padding:2px;">
+<p style="display:inline;">Type out your question or suggestion below and we will get back to you.<br />P.S. Don't forget to fill out your name and email too</p>
+</div>
+
+<div style="position:relative;top:32px;">
+<form method="post" name="myemailform" action="contactadmin.php">
+<div style="padding:10px;width:;background-color:darkred;">
+<div style="padding:10px;border-radius:5px;
+/* gradients */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #AA6666), color-stop(15%, #CC2233), color-stop(100%, #990101));
+background: -moz-linear-gradient(top, #AA6666 0%, #CC2233 55%, �#990101 130%);
+">
+<p style="color:white;display:inline;padding:3px;position:relative;top:1px;"> Name: </p>
+<input type="text" name="name" class="textinput" />
+<p style="color:white;display:inline;padding:3px;position:relative;top:1px;">Your Email: </p>
+<input type="text" name="email" class="textinput" />
+<input type="submit" value="Send" style="float:right;border-radius:100px;border-style:none;padding:2px 6px;
+/* gradients */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(15%, #EEEEEE), color-stop(100%, #888888));
+background: -moz-linear-gradient(top, #FFFFFF 0%, #EEEEEE 55%, �#888888 130%);
+" onmousedown="this.style.boxShadow='inset 0px 1px 3px black';this.style.background='-webkit-gradient(linear, left top, left bottom, color-stop(0%, #777777), color-stop(15%, #999999), color-stop(100%, #DDDDDD))';this.style.background='-moz-linear-gradient(top, #777777 0%, #999999 55%, �#DDDDDD 130%);'"
+onmouseout="this.style.boxShadow='none';this.style.background='-webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFFFFF), color-stop(15%, #EEEEEE), color-stop(100%, #888888))';this.style.background='-moz-linear-gradient(top, #FFFFFF 0%, #EEEEEE 55%, �#888888 130%);'" />
+</div>
+<br />
+<textarea name="message" style="width:100%;height:60%;border-radius:0px;"></textarea>
+</div>
+</form>
+</div>
+</body>
+</html>
